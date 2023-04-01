@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    srand(time(NULL));
+    
+    int i;
+    int j;
+    int pos = 0;
+    int neg = 0;
+    
+    int **mas = new int *[3];
+    
+    for (int i = 0; i < 3; i++){
+        mas[i] = new int [3];
+        }
+        
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
+            mas[i][j] = rand() % 5 - 2;
+            cout << mas[i][j] << ' ';
+            }
+        }
+        
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
+            if (mas[i][j] % 2 == 0) pos++; 
+                else neg++;
+        }}
+        
+        for (int i = 0; i < 3; i++){
+        if (mas[i][j] >= 0) pos++;
+        else neg++;
+        }
+    
+    cout << '\n';
+    cout << pos << '\n';
+    cout << neg;
+        
+        cout << endl;
+        
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+            if (mas[i] == mas[j]){
+                cout << mas[i][j] << ' ';
+        }}}
+        
+        cout << endl;
+        
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+            if (i + j == 3 - 1){
+                cout << mas[i][j] << ' ';
+        }}}
+
+}
