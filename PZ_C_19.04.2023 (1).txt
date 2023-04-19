@@ -1,0 +1,44 @@
+// Example program
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+    
+class StopItemOrder {
+    private:
+        string name;
+        double price;
+        int numItem;
+        
+    public:
+        StopItemOrder(string name, double price, int numItem);
+        void set(string name, double price, int numItem);
+        void get();
+        double totalPrice(double price, int numItem);
+        void print();
+};
+        StopItemOrder::StopItemOrder(string name, double price, int numItem) {
+            set(name, price, numItem);
+        }
+        void StopItemOrder::set(string name, double price, int numItem) {
+            this -> name = name;
+            this -> price = price;
+            this -> numItem = numItem;
+        }
+        void StopItemOrder::get() {
+            cout << this -> name << this -> price << this -> numItem;
+        }
+        double StopItemOrder::totalPrice(double price, int numItem) {
+            return price * numItem;
+        }
+        void StopItemOrder::print() {
+            cout << this -> name << '/' << this -> price << '/' << this -> numItem;
+        }
+        
+int main() {
+    StopItemOrder bag1("comp", 10000, 2);
+    bag1.print();
+    
+    return 0;
+}
